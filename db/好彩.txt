@@ -1,0 +1,42 @@
+
+https://www.6hc6.com/cashlogin
+{account:'a920259310',password:$.md5($.md5(password)),code:8655}
+account=a920259310&password=678b557478a23722cba4e963d48bd620&code=8655
+
+account=!guest!&password=e58fbb2fd0b106bf64263a1673bc3287&code=8655
+
+//下单api
+https://www.6hc6.com/member/bet
+//下单具体号码
+{"lottery":"BJPK10","drawNumber":"722839","bets":[{"game":"B1","contents":"1","amount":1,"odds":9.95},{"game":"B1","contents":"2","amount":1,"odds":9.95},{"game":"B1","contents":"3","amount":1,"odds":9.95},{"game":"B1","contents":"4","amount":1,"odds":9.95},{"game":"B1","contents":"5","amount":1,"odds":9.95},{"game":"B2","contents":"1","amount":1,"odds":9.95},{"game":"B3","contents":"1","amount":1,"odds":9.95},{"game":"B4","contents":"1","amount":1,"odds":9.95},{"game":"B5","contents":"1","amount":1,"odds":9.95}],"uniqueId":0}
+//下单  大小 单双 龙虎
+{"lottery":"BJPK10","drawNumber":"723749","bets":[{"game":"DX1","contents":"D","amount":1,"odds":1.995},{"game":"DS1","contents":"D","amount":1,"odds":1.995},{"game":"LH1","contents":"L","amount":1,"odds":1.995}],"uniqueId":0}
+
+
+
+
+//签到请求体
+Host: www.6hc6.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate, br
+Referer: https://www.6hc6.com/member/sign
+X-Requested-With: XMLHttpRequest
+Connection: keep-alive
+Cookie: defaultLT=BJPK10; _skin_=red; VPOWER_VCODE_Key=609A199881CA4BA9C95688235CD6AC5C; JSESSIONID=8DF7133FAF735934E5127D528878D3A7
+Content-Length: 0
+
+//签到API POST
+https://www.6hc6.com/member/receiveSign
+
+//进入签到页 GET
+https://www.6hc6.com/member/sign
+//获取每天签到记录POST
+https://www.6hc6.com/member/getSignData
+{"items":[{"actionId":1,"couponamount":2,"createtime":"","integralNum":2,"issueFlag":0,"rechLevels":"","signdate":"2019-01-05"},{"actionId":37107,"couponamount":2,"createtime":"2019-01-04 09:38:41","integralNum":2,"issueFlag":1,"rechLevels":"","signdate":"2019-01-04"},{"actionId":36785,"couponamount":2,"createtime":"2019-01-03 15:58:52","integralNum":2,"issueFlag":1,"rechLevels":"","signdate":"2019-01-03"}], "totalCount":3,"otherData":null}
+
+
+//账户余额查询   GET
+https://www.6hc6.com/member/account?_=1546683253204
+{"balance":2.695,"betting":0,"freeze":0,"result":0}

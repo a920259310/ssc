@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springboot.zcssc.zcssc.mapper.AccountMapper" >
+  <resultMap id="BaseResultMap" type="com.springboot.zcssc.zcssc.bean.db.Account" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="md5" property="md5" jdbcType="VARCHAR" />
+    <result column="take_password" property="takePassword" jdbcType="VARCHAR" />
+    <result column="yu_e" property="yuE" jdbcType="DOUBLE" />
+    <result column="is_active" property="isActive" jdbcType="BIT" />
+    <result column="is_bang" property="isBang" jdbcType="BIT" />
+    <result column="card_no" property="cardNo" jdbcType="VARCHAR" />
+    <result column="is_regist" property="isRegist" jdbcType="BIT" />
+  </resultMap>
+</mapper>

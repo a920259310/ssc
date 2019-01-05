@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+
+    <context id="baseset"  targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+
+        <!-- 根据Mapper生成实体类,xml文件 -->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.springboot.zcssc.zcssc.common.mybatis.mapper.IBaseMapper"/>
+        </plugin>
+
+        <!-- 连接字符串 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/haocai"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <!-- 指定生成“entity实体类、mybatis映射xml文件、mapper接口”的具体位置 -->
+        <javaModelGenerator targetPackage="com.springboot.zcssc.zcssc.bean.db" targetProject="src/main/java" >
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/resources" >
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.springboot.zcssc.zcssc.mapper" targetProject="src/main/java"   type="XMLMAPPER" >
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <!-- 具体要生成的表，如果有多个表，复制这一段，改下表名即可 -->
+       <!-- <table   tableName="cp_open_data"
+                 domainObjectName="BasesetUser"
+                 enableCountByExample="false"
+                 enableUpdateByExample="false"
+                 enableDeleteByExample="false"
+                 enableSelectByExample="false"
+                 selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>-->
+
+        <!--<table   tableName="account"
+                 enableCountByExample="false"
+                 enableUpdateByExample="false"
+                 enableDeleteByExample="false"
+                 enableSelectByExample="false"
+                 selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+-->
+        <table   tableName="account_sing"
+                 enableCountByExample="false"
+                 enableUpdateByExample="false"
+                 enableDeleteByExample="false"
+                 enableSelectByExample="false"
+                 selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
