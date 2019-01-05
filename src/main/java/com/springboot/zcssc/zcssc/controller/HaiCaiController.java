@@ -3,6 +3,7 @@ package com.springboot.zcssc.zcssc.controller;
 import com.springboot.zcssc.http.response.SingBean;
 import com.springboot.zcssc.zcssc.bean.db.Account;
 import com.springboot.zcssc.zcssc.bean.db.AccountSing;
+import com.springboot.zcssc.zcssc.service.AccountOrderService;
 import com.springboot.zcssc.zcssc.service.AccountService;
 import com.springboot.zcssc.zcssc.service.AccountSingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class HaiCaiController {
 
     @Autowired
     private AccountSingService accountSingService;
+
+    @Autowired
+    private AccountOrderService accountOrderService;
 
     @RequestMapping("/account/singe")
     public void singTodayAccount(){
@@ -37,6 +41,25 @@ public class HaiCaiController {
         List<Boolean> booleans = accountService.registAccountBatch(accounts);
         accountService.updateNotNullBatch(accounts);
         System.out.println(accounts);
+    }
+    @RequestMapping("/account/to_order")
+    public void toOrder(String trunkNumber){
+        try {
+            List<Account> accounts = accountService.selectAccountLtOneSortYeAsc(1, 10);
+            accountOrderService.toOrder(accounts, trunkNumber);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @RequestMapping("/account/update_amount")
+    public void updateAmount(){
+        try {
+            List<Account> accounts = accountService.selectAccountAll();
+            accountService.updateAccountAmout(accounts);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 

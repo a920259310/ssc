@@ -20,9 +20,7 @@ import org.slf4j.LoggerFactory;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class HaoCaiUserManager {
     protected org.slf4j.Logger logger = LoggerFactory.getLogger(BaseServiceImpl.class);
@@ -61,22 +59,36 @@ public class HaoCaiUserManager {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
+        System.setProperty("javax.net.ssl.trustStore", "D:\\openSources\\jdk1.8\\lib\\security\\jssecacerts");
         HaoCaiUserManager account = new HaoCaiUserManager("a920259310", "678b557478a23722cba4e963d48bd620");
+//        System.out.println(account);
+//        HaoCaiXiaBean haoCaiXiaBean = new HaoCaiXiaBean();
+//        haoCaiXiaBean.setUniqueId(1);
+//        haoCaiXiaBean.setDrawNumber("724142");
+//        List<HaoCaiXiaBean.BetsBean> bets = new ArrayList<HaoCaiXiaBean.BetsBean>();
+//        haoCaiXiaBean.setBets(bets);
+//        HaoCaiXiaBean.BetsBean bet = new HaoCaiXiaBean.BetsBean();
+//        bets.add(bet);
+//        bet.setGame("B1");
+//        bet.setContents("9");
+//        bet.setAmount(1);
+//        bet.setOdds(9.95);
+//
+//        Boolean aBoolean = account.toOrder(haoCaiXiaBean);
+//        System.out.println(aBoolean);
+    }
 
-        HaoCaiXiaBean haoCaiXiaBean = new HaoCaiXiaBean();
-        haoCaiXiaBean.setUniqueId(1);
-        haoCaiXiaBean.setDrawNumber("724142");
-        List<HaoCaiXiaBean.BetsBean> bets = new ArrayList<HaoCaiXiaBean.BetsBean>();
-        haoCaiXiaBean.setBets(bets);
-        HaoCaiXiaBean.BetsBean bet = new HaoCaiXiaBean.BetsBean();
-        bets.add(bet);
-        bet.setGame("B1");
-        bet.setContents("9");
-        bet.setAmount(1);
-        bet.setOdds(9.95);
-
-        Boolean aBoolean = account.toOrder(haoCaiXiaBean);
-        System.out.println(aBoolean);
+    /**
+     * 余额查询
+     * @return
+     * @throws IOException
+     */
+    public YuEBean queryYuE() throws IOException {
+        GetMethod postMethodLogin = new GetMethod(haoCaiApi.getHOST_URL() + haoCaiApi.getAPI_QUERY_YU_E()+"?_=" + new Date().getTime());
+        int i = httpClient.executeMethod(postMethodLogin);
+        String responseBodyAsString = postMethodLogin.getResponseBodyAsString();
+        YuEBean yuEBean = JSONUtils.toBean(responseBodyAsString, YuEBean.class);
+        return yuEBean;
     }
 
     /**

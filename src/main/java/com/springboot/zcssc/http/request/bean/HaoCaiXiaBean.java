@@ -14,7 +14,7 @@ public class HaoCaiXiaBean {
 
     private String lottery = "BJPK10";
     private String drawNumber;
-    private int uniqueId;
+    private int uniqueId=0;
     private List<BetsBean> bets;
 
     public String getLottery() {
@@ -103,5 +103,14 @@ public class HaoCaiXiaBean {
                     ", odds=" + odds +
                     '}';
         }
+    }
+
+    public String toString() {
+        return "HaoCaiXiaBean{" +
+                "lottery='" + lottery + '\'' +
+                ", drawNumber='" + drawNumber + '\'' +
+                ", uniqueId=" + uniqueId +
+                ", bets=" + bets +
+                '}';
     }
 }

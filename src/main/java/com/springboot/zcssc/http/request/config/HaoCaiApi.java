@@ -15,6 +15,9 @@ public class HaoCaiApi {
 
     private String API_QIAN_DAO = "member/receiveSign";//签到地址
 
+    private String API_QUERY_YU_E = "member/account";//签到地址
+
+
 
     public String getHOST_URL() {
         return HOST_URL;
@@ -72,7 +75,14 @@ public class HaoCaiApi {
         this.API_ZHU_CE_HOME_CODE = API_ZHU_CE_HOME_CODE;
     }
 
-    @Override
+    public String getAPI_QUERY_YU_E() {
+        return API_QUERY_YU_E;
+    }
+
+    public void setAPI_QUERY_YU_E(String API_QUERY_YU_E) {
+        this.API_QUERY_YU_E = API_QUERY_YU_E;
+    }
+
     public String toString() {
         return "HaoCaiApi{" +
                 "HOST_URL='" + HOST_URL + '\'' +
@@ -82,6 +92,7 @@ public class HaoCaiApi {
                 ", API_ZHU_CE_HOME='" + API_ZHU_CE_HOME + '\'' +
                 ", API_ZHU_CE='" + API_ZHU_CE + '\'' +
                 ", API_QIAN_DAO='" + API_QIAN_DAO + '\'' +
+                ", API_QUERY_YU_E='" + API_QUERY_YU_E + '\'' +
                 '}';
     }
 }

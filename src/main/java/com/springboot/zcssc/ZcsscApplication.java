@@ -11,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class ZcsscApplication {
 
     public static void main(String[] args) {
+        System.setProperty("javax.net.ssl.trustStore", "D:\\openSources\\jdk1.8\\lib\\security\\jssecacerts");
         SpringApplication.run(ZcsscApplication.class, args);
     }
 
