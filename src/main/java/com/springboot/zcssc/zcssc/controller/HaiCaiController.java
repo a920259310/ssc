@@ -25,7 +25,7 @@ public class HaiCaiController {
 
     @RequestMapping("/account/singe")
     public void singTodayAccount(){
-        List<AccountSing> accountSings = accountSingService.selectByIsSinge(false, "2019-01-05");
+        List<AccountSing> accountSings = accountSingService.selectByIsSinge(false, "2019-01-06");
         for(AccountSing accountSing : accountSings){
             Account account = accountService.queryById(accountSing.getAccountId());
             SingBean singBean = accountSingService.accountSingeByAccount(account, accountSing);

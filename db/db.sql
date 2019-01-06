@@ -12,4 +12,4 @@ INSERT INTO account(id,user_name,PASSWORD,MD5,take_password,yu_e,is_active,is_ba
 INSERT INTO account(id,user_name,PASSWORD,MD5,take_password,yu_e,is_active,is_bang,card_no,is_regist) VALUES('12','q10010','a666666','f9aa4d5dee4b0b6dbe5ae4cab68e1d9b','a123456','0','1','0','','1');
 
 INSERT INTO account_sing(account_id,create_date_time,is_singe)
-SELECT id AS account_id,NOW() AS create_date_time,0 AS is_singe FROM account;
+SELECT id AS account_id,DATE_FORMAT(NOW(),'%Y-%m-%d') AS create_date_time,0 AS is_singe FROM account;
