@@ -16,7 +16,7 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/haocai"
                         userId="root"
-                        password="admin">
+                        password="root">
         </jdbcConnection>
 
         <!-- 指定生成“entity实体类、mybatis映射xml文件、mapper接口”的具体位置 -->

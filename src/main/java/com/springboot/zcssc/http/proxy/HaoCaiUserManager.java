@@ -59,8 +59,9 @@ public class HaoCaiUserManager {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        System.setProperty("javax.net.ssl.trustStore", "D:\\openSources\\jdk1.8\\lib\\security\\jssecacerts");
+//        System.setProperty("javax.net.ssl.trustStore", "D:\\openSources\\jdk1.8\\lib\\security\\jssecacerts");
         HaoCaiUserManager account = new HaoCaiUserManager("a920259310", "678b557478a23722cba4e963d48bd620");
+        account.sing();
 //        System.out.println(account);
 //        HaoCaiXiaBean haoCaiXiaBean = new HaoCaiXiaBean();
 //        haoCaiXiaBean.setUniqueId(1);
